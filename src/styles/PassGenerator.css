@@ -1,0 +1,107 @@
+.password-generator {
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #24232b;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.password-container,
+.strength-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.length-container,
+.character-types-container {
+  display: grid;
+}
+
+.password-container,
+.length-container,
+.character-types-container,
+.strength-container {
+  margin-bottom: 20px;
+}
+
+.password-container h2,
+.length-container h2,
+.character-types-container h2,
+.strength-container h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.password-container button,
+.generate-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #2a8b8b;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.generate-btn {
+  width: 100%;
+}
+
+.character-types-container .checkbox-container label {
+  display: flex;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.strength-container .strength-bar {
+  width: 20%;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+}
+
+.strength-container .strength-level {
+  width: 0px;
+  height: 100%;
+  background-color: gray;
+  transition: width 0.3s ease-in-out;
+}
+
+/* .strength-container input[type="text"] {
+  font-size: 12px;
+  border: none;
+  background-color: transparent;
+} */
+
+.length-container input[type="range"] {
+  /* width: 100%; */
+  padding: 0;
+  margin-top: 8px;
+  -webkit-appearance: none;
+  background-color: #2a8b8b;
+  border-radius: 10px;
+}
+
+.length-container input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+}
+
+.length-container input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #fff;
+  margin-top: -6px;
+}
