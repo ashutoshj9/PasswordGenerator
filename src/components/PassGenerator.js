@@ -3,6 +3,7 @@ import "../styles/PassGenerator.css";
 
 const PassGenerator = () => {
   const [password, setPassword] = useState("");
+  const [copyText, setCopyText] = useState("Copy");
   const [length, setLength] = useState(8);
   const [includeUppercase, setIncludeUppercase] = useState(false);
   const [includeLowercase, setIncludeLowercase] = useState(false);
@@ -18,6 +19,8 @@ const PassGenerator = () => {
 
     let chars = "";
     let strength = "";
+
+    setCopyText("Copy");
 
     if (includeUppercase) chars += uppercaseChars;
     if (includeLowercase) chars += lowercaseChars;
@@ -47,7 +50,7 @@ const PassGenerator = () => {
     } else if (generatedPassword.length < 16) {
       strength = "Good";
     } else {
-      strength = "Very Good"; 
+      strength = "Very Good";
     }
     //#endregion
 
@@ -55,7 +58,12 @@ const PassGenerator = () => {
   };
 
   const handleCopyPassword = () => {
-    navigator.clipboard.writeText(password);
+    if (password != "") {
+      navigator.clipboard.writeText(password);
+      alert("Password copied!");
+      setCopyText("Copied");
+    }
+    else alert("Click on 'Generate' to generate password")
   };
 
   const getStrengthBarColor = () => {
@@ -85,7 +93,7 @@ const PassGenerator = () => {
             Click button to generate password
           </b>
         )}
-        <button onClick={handleCopyPassword}>Copy</button>
+        <button onClick={handleCopyPassword}>{copyText}</button>
       </div>
       <div className="length-container">
         <div
